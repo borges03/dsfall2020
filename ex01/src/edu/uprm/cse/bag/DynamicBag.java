@@ -1,5 +1,7 @@
 package edu.uprm.cse.bag;
 
+import java.util.Arrays;
+
 public class DynamicBag implements Bag {
 
     private static final int INITAL_SIZE = 10; // constant to give intial size
@@ -109,12 +111,15 @@ public class DynamicBag implements Bag {
 
     @Override
     public int removeAll(Object obj) {
-        int result = 0;
 
-        while(this.remove(obj)){
-            ++result;
-        }
-        return result;
+        this.elements = Arrays.stream(this.elements).filter(val -> val != obj).toArray();
+        return this.currentSize-=this.elements.length;
+//        int result = 0;
+//
+//        while(this.remove(obj)){
+//            ++result;
+//        }
+//        return result;
     }
     public Object[] toArray(){
         Object[] result;

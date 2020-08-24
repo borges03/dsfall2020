@@ -1,5 +1,7 @@
 package edu.uprm.cse.bag;
 
+import java.util.Arrays;
+
 public class DynamicBag implements Bag {
 
     private static final int INITAL_SIZE = 10; // constant to give intial size
